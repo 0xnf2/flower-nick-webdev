@@ -47,3 +47,30 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+
+
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: 104.131.117.150
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $WERCKER_PRIVATE
+        overwrite: true
+    - script:
+        name: transfer application
+        code: |
+          pwd
+          ls -la
+          scp -i $PRIVATEKEY_PATH -r ./ root@104.131.117.150:/home/web/webdev/flower-nick-webdev
+    - script:
+        name: make
+        code: ssh -i $PRIVATEKEY_PATH -l root 104.131.117.150 "cd /home/web/webdev/flower-nick-webdev &&  make"
+    - script:
+        name: start application
+        code: |
+          ssh -i $PRIVATEKEY_PATH -l root 104.131.117.150 "if [[ \"\$(status webdev)\" = *start/running* ]]; then stop webdev -n ; fi"
+          ssh -i $PRIVATEKEY_PATH -l root 104.131.117.150 start webdev
