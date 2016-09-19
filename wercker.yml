@@ -59,7 +59,7 @@ deploy:
         repository: 0xnf2/webdev
         ports: "3000"
         #cmd: /bin/bash -c "cd /pipeline/source && supervisor - watch ./src src/server.js"
-        cmd: /bin/bash -c "chmod -R 777 /pipeline/source/ && /pipeline/source/server.js && supervisor --watch /pipeline/source/server.js"
+        cmd: /bin/bash -c "chmod -R 777 /pipeline/source/ && /pipeline/source/server.js && supervisor --watch /pipeline/source /pipeline/source/server.js"
     - add-ssh-key:
         keyname: WERCKER
     - add-to-known_hosts:
