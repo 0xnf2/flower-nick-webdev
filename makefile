@@ -17,14 +17,14 @@ updates:
 	npm outdated --depth 0
 
 post-install:
-	# cd ./node_modules; \
+	cd ./node_modules; \
 	# ln -snf ../app; \
 	# ln -snf ../app/api; \
 	# ln -snf ../app/config; \
 	# ln -snf ../app/lib; \
 	# ln -snf ../app/logger; \
 	# ln -snf ../app/modules; \
-	# ln -snf ../test;
+	ln -snf ../test;
 
 test-all:
 	gulp jshint
