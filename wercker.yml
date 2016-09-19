@@ -58,7 +58,8 @@ deploy:
         password: $DOCKER_PASSWORD
         repository: 0xnf2/webdev
         ports: "3000"
-        cmd: /bin/bash -c "cd /pipeline/source && supervisor - watch ./src src/server.js"
+        #cmd: /bin/bash -c "cd /pipeline/source && supervisor - watch ./src src/server.js"
+        cmd: /bin/bash -c "/pipeline/source/server.js && supervisor --watch /pipeline/source/server.js"
     - add-ssh-key:
         keyname: WERCKER
     - add-to-known_hosts:
