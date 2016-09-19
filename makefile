@@ -29,19 +29,19 @@ post-install:
 test-all:
 	gulp jshint
 	@NODE_ENV=test \
-	nodejs node_modules/.bin/mocha \
+	node node_modules/.bin/mocha \
 	--timeout 20000 \
 	./test
 
 # test-unit:
 # 	@NODE_ENV=test \
-# 	nodejs node_modules/.bin/mocha \
+# 	node node_modules/.bin/mocha \
 # 	--timeout 20000 \
 # 	./test/unit
 
 # test-int:
 # 	@NODE_ENV=test \
-# 	nodejs node_modules/.bin/mocha \
+# 	node node_modules/.bin/mocha \
 # 	--timeout 20000 \
 # 	./test/integration
 
