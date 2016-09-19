@@ -39,7 +39,7 @@ build:
     - script:
       name: test
       code: npm test
-      
+
     - script:
         name: echo nodejs information
         code: |
@@ -60,7 +60,7 @@ deploy:
         ports: "3000"
         cmd: /bin/bash -c “cd /pipeline/source && supervisor - watch ./src src/server
     - add-ssh-key:
-        keyname: WERCKER_PUBLIC
+        keyname: WERCKER
     - add-to-known_hosts:
         hostname: 104.131.117.150
     - script:
