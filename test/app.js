@@ -10,7 +10,7 @@ module.exports = function(app)
         connectionString = process.env.DIGITALOCEAN_MONGODB_DB_USERNAME + ":" +
             process.env.DIGITALOCEAN_MONGODB_DB_PASSWORD + "@" +
             process.env.DIGITALOCEAN_MONGODB_DB_HOST + ':' +
-            process.env.DIGITALOCEAN_MONGOB_DB_PORT + '/' +
+            process.env.DIGITALOCEAN_MONGODB_DB_PORT + '/' +
             process.env.DIGITALOCEAN_APP_NAME;
     }
 
