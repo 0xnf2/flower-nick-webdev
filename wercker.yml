@@ -51,26 +51,35 @@ build:
 
 deploy:
   steps:
+    - npm-install
+    - script:
+        name: install supervisor
+        code: npm install -g supervisor
+    - internal/docker-push:
+        username: $DOCKER_USERNAME
+        password: $DOCKER_PASSWORD
+        repository: 0xnf2/webdev
+        ports: "3000"
+        cmd: /bin/bash -c “cd /pipeline/source && supervisor - watch ./src src/server
+    - add-ssh-key:
+        keyname: WERCKER_PUBLIC
     - add-to-known_hosts:
         hostname: 104.131.117.150
-    - mktemp:
-        envvar: PRIVATEKEY_PATH
-    - create-file:
-        name: write key
-        filename: $PRIVATEKEY_PATH
-        content: $WERCKER_PRIVATE
-        overwrite: true
     - script:
-        name: transfer application
-        code: |
-          pwd
-          ls -la
-          scp -i $PRIVATEKEY_PATH -r ./ root@104.131.117.150:/home/web/webdev/flower-nick-webdev
+        name: pull latest image
+        code: ssh root@104.131.117.150 docker pull 0xnf2/webdev:latest
     - script:
-        name: make
-        code: ssh -i $PRIVATEKEY_PATH -l root 104.131.117.150 "cd /home/web/webdev/flower-nick-webdev &&  make"
+        name: stop running container
+        code: ssh root@104.131.117.150 docker stop webdev || echo ‘failed to stop running container’
     - script:
-        name: start application
-        code: |
-          ssh -i $PRIVATEKEY_PATH -l root 104.131.117.150 "if [[ \"\$(status webdev)\" = *start/running* ]]; then stop webdev -n ; fi"
-          ssh -i $PRIVATEKEY_PATH -l root 104.131.117.150 start webdev
+        name: remove stopped container
+        code: ssh root@104.131.117.150 docker rm webdev || echo ‘failed to remove stopped container’
+    - script:
+        name: remove image behind stopped container
+        code: ssh root@104.131.117.150 docker rmi 0xnf2/webdev:current || echo ‘failed to remove image behind stopped container’
+    - script:
+        name: tag newly pulled image
+        code: ssh root@104.131.117.150 docker tag 0xnf2/webdev:latest 0xnf2/webdev:current
+    - script:
+        name: run new container
+        code: ssh root@104.131.117.150 docker run -d -p 8080:3000 --name webdev 0xnf2/webdev:current
