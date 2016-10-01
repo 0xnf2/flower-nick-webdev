@@ -5,3 +5,8 @@ input.form-control {
 body {
     padding-top: 60px;
 }
+
+#sidepanel {
+    float:left;
+    overflow: hidden;
+}
