@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WebAppMaker - New Website</title>
+    <title>WebAppMaker - Edit Website</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 </head>
@@ -14,7 +14,7 @@
             <!--Augmented links for larger screens -->
             <div class="col-md-4 col-lg-4 pull-left visible-md-inline-block visible-lg-inline-block">
                 <p class="navbar-text pull-left">
-                    <a href="profile.html" class="navbar-link">
+                    <a href="website-list.html" class="navbar-link">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </p>
@@ -35,7 +35,7 @@
                     </a>
                 </p>
                 <a class="navbar-brand" href="#">
-                    New Website
+                    Edit Website
                 </a>
                 <p class="navbar-text pull-right">
                     <a href="website-list.html" class="navbar-link">
@@ -115,14 +115,15 @@
             <div class="col-md-8 col-lg-8">
                 <form>
                     <div class="form-group">
-                        <label for="websiteName">Name</label>
-                        <input type="text" class="form-control" id="websiteName" placeholder="Website Name">
+                        <label for="websiteName">Website Name</label>
+                        <input type="text" class="form-control" id="websiteName" placeholder="Website Name" value="Name of Website">
                     </div>
                     <div class="form-group">
-                        <label for="websiteDescription">Description</label>
-                        <textarea class="form-control" id="websiteDescription" placeholder="Description"></textarea>
+                        <label for="websiteDescription">Website Description</label>
+                        <textarea class="form-control" id="websiteDescription" placeholder="Description">I am a long description of the Website</textarea>
                     </div>
                 </form>
+                <a class="btn btn-danger btn-block" href="website-list.html">Delete</a>
             </div>
         </div>
     </div>
