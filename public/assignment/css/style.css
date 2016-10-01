@@ -22,3 +22,7 @@ body {
     height:auto !important; /* cross-browser */
     height: 100%; /* cross-browser */
 }
+
+.h1widget{
+    color: black;
+}
