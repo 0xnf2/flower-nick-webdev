@@ -15,14 +15,26 @@ body {
     border-style: solid;
     border-color: blue;
     border-width: 0px 2px 0px 0px;
+    top: 0px;
+    bottom: 0px;
 }
 
 .fill { 
   min-height: 100%;
-    height:auto !important; /* cross-browser */
-    height: 100%; /* cross-browser */
+  /*height:auto !important;  cross-browser */
+  height: 100%; /* cross-browser */
 }
 
 .h1widget{
     color: black;
+}
+
+.verticalline {
+    width:1px;
+    background-color: black;
+    /*left: 33%;*/
+    /*position: absolute;*/
+    /*z-index: 5;*/
+    top:0;
+    bottom: 0;
 }
