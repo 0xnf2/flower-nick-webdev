@@ -1,0 +1,88 @@
+* {
+  -webkit-transition: all 400ms;
+  -moz-transition: all 400ms;
+  -o-transition: all 400ms;
+  transition: all 400ms;
+}
+html {
+  background: url('../img/boston3.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 100;
+}
+img {
+  display: block;
+  width: 5%;
+  height: 5%;
+  margin: 0 auto;
+}
+#main {
+  width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 8%;
+}
+#title {
+  border-bottom: 1px solid #fff;
+  opacity: 0.8;
+  text-align: left;
+  line-height: 0px;
+}
+#title h1 {
+  font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight';
+  font-size: 55;
+  font-weight: 100;
+  color: #fff;
+}
+#required {
+  text-align: right;
+  padding-bottom: 50px;
+}
+#required a {
+  text-align: center;
+  display: inline-block;
+  padding: 8px;
+  opacity: 0.5;
+}
+#required a:hover {
+  opacity: 1.0;
+}
+
+#jobs img {
+  opacity: 0.4;
+  padding: 15px 0;
+}
+#jobs img:hover {
+  opacity: 1.0;
+}
+#jobs img#draper {
+  width: 95%;
+}
+#jobs img#nibr {
+  width: 95%;
+}
+#jobs img#basis {
+  width: 95%;
+}
+#jobs img#mbta {
+  width: 95%;
+  padding-bottom: 5px;
+}
+#social a {
+  display: inline-block;
+  padding: 8px;
+  opacity: 0.4;
+}
+#social a:hover {
+  opacity: 1.0;
+}
