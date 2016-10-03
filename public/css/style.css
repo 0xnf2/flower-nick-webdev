@@ -5,7 +5,7 @@
   transition: all 400ms;
 }
 html {
-  background: url('../img/boston3.png') no-repeat center center fixed;
+  background: url('../img/Boston3.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
