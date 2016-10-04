@@ -14,6 +14,7 @@ html {
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+  height: 100%;
 }
 a {
   text-decoration: none;
@@ -77,6 +78,11 @@ img {
 #jobs img#mbta {
   width: 95%;
   padding-bottom: 5px;
+}
+#social{
+  position: absolute;
+  bottom: 15;
+  right: 15;
 }
 #social a {
   display: inline-block;
