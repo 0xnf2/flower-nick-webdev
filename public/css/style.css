@@ -81,8 +81,8 @@ img {
 }
 #social{
   position: absolute;
-  bottom: 15;
-  right: 15;
+  bottom: 15px;
+  right: 15px;
 }
 #social a {
   display: inline-block;
