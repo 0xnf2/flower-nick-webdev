@@ -113,7 +113,8 @@
                     <textarea class="form-control" id="websiteDescription" placeholder="Description" ng-model="model.website.description">I am a long description of the Website</textarea>
                 </div>
             </form>
-            <a class="btn btn-danger btn-block" href="#/user/:uid/website">Delete</a>
+            <a class="btn btn-danger btn-block" ng-click="model.updateWebsite(website)" href="#/user/:uid/website" >Update</a>
+            <a class="btn btn-danger btn-block" ng-click="model.deleteWebsite()" href="#/user/:uid/website" >Delete</a>
         </div>
     </div>
 </div>

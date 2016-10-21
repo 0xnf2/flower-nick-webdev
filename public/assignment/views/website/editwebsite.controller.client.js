@@ -2,9 +2,19 @@
     angular
         .module("WebAppMaker")
         .controller("EditWebsiteController", EditWebsiteController)
-    function EditWebsiteController($routeParams, WebsiteService) { 
+    function EditWebsiteController($routeProvider, WebsiteService) { 
         var vm = this;
-        vm.websiteId = $routeParams["websiteId"];
+        vm.websiteId = $routeProvider.websiteId;
+        vm.updateWebsite = updateWebsite;
+        vm.deleteWebsite = deleteWebsite;
+
+        function updateWebsite(website) {
+            WebsiteService.updateWebsite(vm.websiteId, website);
+        }
+
+        function deleteWebsite() {
+            WebsiteService.deleteWebsite(vm.websiteId);
+        }
         function init() {
             vm.website = WebsiteServcie.findWebsiteById(vm.websiteId);
         };
