@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div>
             <p class="navbar-text pull-left">
-                <a href="#/user/:uid/website/:wid/page" class="navbar-link">
+                <a href="#/user/{{vm.userId}}/website/{{vm.websiteId}}/page" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </p>
@@ -10,7 +10,7 @@
                 Widgets
             </a>
             <p class="navbar-text pull-right">
-                <a href="#/user/:uid/website/:wid/page/:pid/widget/new" class="navbar-link">
+                <a href="#/user/{{vm.userId}}/website/{{vm.websiteId}}/page/{{vm.pageId}}/widget/new" class="navbar-link">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
             </p>
@@ -18,9 +18,9 @@
     </div>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid" ng-switch="widget.type" ng-repeat="widget in model.widgets">
     <!--Image Widget-->
-    <div class="row">
+    <div ng-switch-when="IMAGE" class="row">
         <div class="col-xs-10 text-primary lead">
             <img class="img-responsive" src="https://www.omm.com/~/media/images/site/locations/tokyo_780x520px.ashx"></img>
         </div>
@@ -34,7 +34,7 @@
     </div>
     
     <!--Heading Widget-->
-    <div class="row">
+    <div class="row" ng-switch-when="HEADER">
         <div class="col-xs-10 text-primary lead">
             <h1 class="h1widget">Tokyo is pretty neato header</h1>
         </div>
@@ -48,7 +48,7 @@
     </div>
 
     <!--Youtube Widget-->
-    <div class="row">
+    <div class="row" ng-switch-when="YOUTUBE">
         <div class="col-xs-10 text-primary lead">
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/yEowbmxLqEM" frameborder="0" allowfullscreen></iframe>
@@ -78,7 +78,7 @@
                 </a>
             </p>
             <p class="col-xs-3 pull-right">
-                <a href="#/user/:uid" class="btn">
+                <a href="#/user/{{vm.userId}}" class="btn">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </p>

@@ -23,13 +23,8 @@
       pages.push(page);
    }
 
-  function findPageByWebsiteId(websiteId)  { 
-      var result = pages.filter(function(val){return val.websiteId === websiteId})
-      if(result.length !== 0){
-          return result[0];
-      }else{
-          return null;
-      }
+  function findPagesByWebsiteId(websiteId)  { 
+      return result = pages.filter(function(val){return val.websiteId === websiteId})
   }
 
   function findPageById(pageId){
