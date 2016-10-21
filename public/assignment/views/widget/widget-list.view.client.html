@@ -18,9 +18,21 @@
     </div>
 </nav>
 
-<div class="container-fluid" ng-switch="widget.type" ng-repeat="widget in model.widgets">
+<div class="container-fluid" ng-repeat="widget in model.widgets">
+
+    <div ng-switch-when="HEADING">
+        <ng-include src="'widget-heading.view.client.html'">
+    </div>
+    <div ng-switch-when="IMAGE">
+        <ng-include src="'widget-image.view.client.html'">
+    </div>
+    <div ng-switch-when="YOUTUBE">
+        <ng-include src="'widget-youtube.view.client.html'">
+    </div>
+
+
     <!--Image Widget-->
-    <div ng-switch-when="IMAGE" class="row">
+    <!--<div>
         <div class="col-xs-10 text-primary lead">
             <img class="img-responsive" src="https://www.omm.com/~/media/images/site/locations/tokyo_780x520px.ashx"></img>
         </div>
@@ -32,9 +44,9 @@
             </p>
         </div>
     </div>
-    
+    -->
     <!--Heading Widget-->
-    <div class="row" ng-switch-when="HEADER">
+    <!--<div class="row" ng-switch-when="HEADER">
         <div class="col-xs-10 text-primary lead">
             <h1 class="h1widget">Tokyo is pretty neato header</h1>
         </div>
@@ -45,10 +57,10 @@
                 </a>
             </p>
         </div>
-    </div>
+    </div>-->
 
     <!--Youtube Widget-->
-    <div class="row" ng-switch-when="YOUTUBE">
+    <!--<div class="row" ng-switch-when="YOUTUBE">
         <div class="col-xs-10 text-primary lead">
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/yEowbmxLqEM" frameborder="0" allowfullscreen></iframe>
@@ -61,7 +73,7 @@
                 </a>
             </p>
         </div>
-    </div>
+    </div>-->
 </div>
 
 <nav class="navbar navbar-default navbar-fixed-bottom">
