@@ -3,6 +3,6 @@
         .module("WebAppMaker")
         .controller("PageListController", PageListController)
     function PageListController() { 
-
+        var vm = this;
      }
 })();
