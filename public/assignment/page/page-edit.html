@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebAppMaker - Edit Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+</head>
+<body>
+
+<nav class="panel panel-default navbar-fixed-top">
+    <div class="container-fluid"> 
+        <div class="row">
+            <!--Augmented links for larger screens -->
+            <div class="col-md-4 col-lg-4 pull-left visible-md-inline-block visible-lg-inline-block">
+                <p class="navbar-text pull-left">
+                    <a href="page-list.html" class="navbar-link">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </p>
+                <a class="navbar-brand" href="page-list.html">
+                    Pages
+                </a>
+                <p class="navbar-text pull-right">
+                    <a href="page-new.html" class="navbar-link">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </a>
+                </p>
+            </div>
+            <!-- Base Links for small screen -->
+            <div class="col-md-8 col-lg-8">
+                <p class="navbar-text pull-left hidden-lg hidden-md">
+                    <a href="page-list.html" class="navbar-link">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                </p>
+                <a class="navbar-brand" href="#">
+                    Edit Page
+                </a>
+                <p class="navbar-text pull-right">
+                    <a href="page-list.html" class="navbar-link">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <div class="container-fluid fill">
+        <!-- Augmented website list for larger screen sizes-->
+        <div class="row fill">
+            <div id="sidepanel" class="col-md-4 col-lg-4 visible-md-inline visible-lg-inline fill">
+                <div class="row">
+            <div class="col-xs-10 text-primary lead">
+               <a href="widget-list.html">
+                    Blog Post
+                <a/>
+            </div>
+            <div class="col-xs-2">
+                <p>
+                    <a href="page-edit.html">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-10 text-primary lead">
+                <a href="widget-list.html">
+                    Blogs
+                <a/>
+            </div>
+            <div class="col-xs-2">
+                <p>
+                    <a href="page-edit.html">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-10 text-primary lead">
+                <a href="widget-list.html">
+                    Home
+                <a/>
+            </div>
+            <div class="col-xs-2">
+                <p>
+                    <a href="page-edit.html">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-10 text-primary lead">
+                <a href="widget-list.html">
+                    About
+                <a/>
+            </div>
+            <div class="col-xs-2">
+                <p>
+                    <a href="page-edit">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-10 text-primary lead">
+                <a href="widget-list.html">
+                    Contact Us
+                <a/>
+            </div>
+            <div class="col-xs-2">
+                <p>
+                    <a href="page-edit.html">
+                        <span class="glyphicon glyphicon-cog"></span>
+                    </a>
+                </p>
+            </div>
+        </div>
+            </div>
+            <!-- Always here, regardless of screen size-->
+            <div class="col-md-8 col-lg-8">
+                <form>
+                    <div class="form-group">
+                        <label for="pageName">Name</label>
+                        <input type="text" class="form-control" id="pageName" placeholder="Page Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="pageTitle">Title</label>
+                        <input type="text" class="form-control" id="pageTitle" placeholder="Page Title">
+                    </div>
+                </form>
+                <a class="btn btn-danger btn-block" href="page-list.html">Delete</a> 
+            </div>
+        </div>
+    </div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="row navbar-text pull-right">
+            <div class="col-xs-3">
+                <a href="profile.html">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+            <!--<div class="col-xs-3 text-center">
+                <a href="#">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </a>
+            </div>
+            <div class="col-xs-3 text-center">
+                <a href="#">
+                    <span class="glyphicon glyphicon-star"></span>
+                </a>
+            </div>
+            <div class="col-xs-3 text-center">
+                <a href="#">
+                    <span class="glyphicon glyphicon-heart"></span>
+                </a>
+            </div>
+        </div>-->
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>
