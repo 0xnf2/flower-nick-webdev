@@ -30,12 +30,7 @@
    }
 
   function findWidgetsByPageId(pageId)  { 
-      var result = widgets.filter(function(val){return val.pageId === pageId})
-      if(result.length !== 0){
-          return result[0];
-      }else{
-          return null;
-      }
+      return widgets.filter(function(val){return val.pageId === pageId})
   }
 
   function findWidgetById(widgetId){

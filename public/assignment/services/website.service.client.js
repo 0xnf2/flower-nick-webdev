@@ -26,13 +26,8 @@
       websites.push(website);
    }
 
-  function findWebsitesByUser(userId)  { 
-      var result = websites.filter(function(val){return val.developerId === userId})
-      if(result.length !== 0){
-          return result[0];
-      }else{
-          return null;
-      }
+  function findWebsitesByUser(userId)  {
+      return websites.filter(function(val){return val.developerId === userId})
   }
 
   function findWebsiteById(websiteId){
