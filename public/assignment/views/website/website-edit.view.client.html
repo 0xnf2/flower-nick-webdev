@@ -106,11 +106,11 @@
             <form>
                 <div class="form-group">
                     <label for="websiteName">Website Name</label>
-                    <input type="text" class="form-control" id="websiteName" placeholder="Website Name" value="Name of Website">
+                    <input type="text" class="form-control" id="websiteName" placeholder="Website Name" value="Name of Website" ng-model="model.website.name">
                 </div>
                 <div class="form-group">
                     <label for="websiteDescription">Website Description</label>
-                    <textarea class="form-control" id="websiteDescription" placeholder="Description">I am a long description of the Website</textarea>
+                    <textarea class="form-control" id="websiteDescription" placeholder="Description" ng-model="model.website.description">I am a long description of the Website</textarea>
                 </div>
             </form>
             <a class="btn btn-danger btn-block" href="#/user/:uid/website">Delete</a>
