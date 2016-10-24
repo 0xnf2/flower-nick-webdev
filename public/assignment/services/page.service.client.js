@@ -10,11 +10,11 @@
         ];
 
       var api = {
-            "createPage"   : "createPage",
-            "findPageByWebsiteId" : "findPageByWebsiteId",
-            "findPageById" : "findPageById",
-            "updatePage" : "updatePage",
-            "deletePage": "deletePage",
+            "createPage"   : createPage,
+            "findPageByWebsiteId" : findPagesByWebsiteId,
+            "findPageById" : findPageById,
+            "updatePage" : updatePage,
+            "deletePage": deletePage,
         };
   return api;
 
@@ -24,11 +24,11 @@
    }
 
   function findPagesByWebsiteId(websiteId)  { 
-      return result = pages.filter(function(val){return val.websiteId === websiteId})
+      return pages.filter(function(val){return val.websiteId === websiteId;});
   }
 
   function findPageById(pageId){
-      var result = pages.filter(function(val){return val._id === pageId})
+      var result = pages.filter(function(val){return val._id === pageId;});
       if(result.length !== 0){
           return result[0];
       }else{
@@ -38,7 +38,7 @@
 
   function updatePage(pageId, page){
       for(var i = 0; i < pages.length; i++){
-          if(pages[i]._id == pageId){
+          if(pages[i]._id === pageId){
               pages[i] = page;
               return;
           }
@@ -47,7 +47,7 @@
 
   function deletePage(pageId){
       for(var i = 0; i < pages.length; i++){
-          if(pages[i]._id == pageId){
+          if(pages[i]._id === pageId){
               pages.splice(i, 1);
               return;
           }

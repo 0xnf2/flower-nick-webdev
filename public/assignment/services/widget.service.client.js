@@ -16,25 +16,25 @@
         ];
 
       var api = {
-            "createWidget"   : "createWidget",
-            "findWidgetsByPageId" : "findWidgetsByPageId",
-            "findWidgetById" : "findWidgetById",
-            "updateWidget" : "updateWidget",
-            "deleteWidget": "deleteWidget",
+            "createWidget"   : createWidget,
+            "findWidgetsByPageId" : findWidgetsByPageId,
+            "findWidgetById" : findWidgetById,
+            "updateWidget" : updateWidget,
+            "deleteWidget": deleteWidget,
         };
   return api;
 
   function createWidget(pageId, widget){ 
       widget.pageId = pageId;
-      widgetspush(widget);
+      widgets.push(widget);
    }
 
   function findWidgetsByPageId(pageId)  { 
-      return widgets.filter(function(val){return val.pageId === pageId})
+      return widgets.filter(function(val){return val.pageId === pageId;});
   }
 
   function findWidgetById(widgetId){
-      var result = widgets.filter(function(val){return val.widgetId === widgetId})
+      var result = widgets.filter(function(val){return val.widgetId === widgetId;});
       if(result.length !== 0){
           return result[0];
       }else{
@@ -44,7 +44,7 @@
 
   function updateWidget(widgetId, widget){
       for(var i = 0; i < widgets.length; i++){
-          if(widgets[i]._id == widgetId){
+          if(widgets[i]._id === widgetId){
               widgets[i] = widget;
               return;
           }
@@ -53,7 +53,7 @@
 
   function deleteWidget(widgetId){
       for(var i = 0; i < widgets.length; i++){
-          if(widgets[i]._id == widgetId){
+          if(widgets[i]._id === widgetId){
               widgets.splice(i, 1);
               return;
           }

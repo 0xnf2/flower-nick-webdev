@@ -4,10 +4,10 @@
         .controller("PageListController", PageListController)
     function PageListController($routeParams, PageService) { 
         var vm = this;
-        vm.userId = $routeParams["userId"];
-        vm.webpageId = $routeParams["webpageId"];
+        vm.userId = $routeParams.userId;
+        vm.webpageId = $routeParams.webpageId;
          function init() {
-            vm.pages = PageService.findPagesByWebsiteId(webpageId);
+            vm.pages = PageService.findPagesByWebsiteId(vm.webpageId);
         };
         init();
      }

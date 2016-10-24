@@ -11,12 +11,12 @@
         ];
 
       var api = {
-            "createUser"   : "createUser",
-            "findUserById" : "findUserById",
-            "findUserByUsername" : "findUserByUsername",
-            "findUserByCredentials" : "findUserByCredentials",
-            "updateUser": "updateUser",
-            "deleteUser" : "deleteUser"    
+            "createUser"   : createUser,
+            "findUserById" : findUserById,
+            "findUserByUsername" : findUserByUsername,
+            "findUserByCredentials" : findUserByCredentials,
+            "updateUser": updateUser,
+            "deleteUser" : deleteUser    
         };
   return api;
 
@@ -25,7 +25,7 @@
    }
 
   function findUserById(id) { 
-      var result = users.filter(function(val){return val._id === id})
+      var result = users.filter(function(val){return val._id === id;});
       if(result.length !== 0){
           return result[0];
       }else{
@@ -34,7 +34,7 @@
   }
 
   function findUserByUsername(username){
-      var result = users.filter(function(val){return val.username === username})
+      var result = users.filter(function(val){return val.username === username;});
       if(result.length !== 0){
           return result[0];
       }else{
@@ -43,7 +43,7 @@
   }
 
   function findUserByCredentials(username, password){
-      var result = users.filter(function(val){return val.username === username && val.password === password})
+      var result = users.filter(function(val){return val.username === username && val.password === password;});
       if(result.length !== 0){
           return result[0];
       }else{
@@ -53,7 +53,7 @@
 
   function updateUser(userId, user){
       for(var i = 0; i < users.length; i++){
-          if(users[i]._id == userId){
+          if(users[i]._id === userId){
               users[i] = user;
               return;
           }
@@ -62,7 +62,7 @@
 
   function deleteUser(userId){
       for(var i = 0; i < users.length; i++){
-          if(users[i]._id == userId){
+          if(users[i]._id === userId){
               users.splice(i, 1);
               return;
           }

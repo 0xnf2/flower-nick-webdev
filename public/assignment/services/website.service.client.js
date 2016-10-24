@@ -13,11 +13,11 @@
             ];
 
       var api = {
-            "createWebsite"   : "createWebsite",
-            "findWebsitesByUser" : "findWebsitesByUser",
-            "findWebsiteById" : "findWebsiteById",
-            "updateWebsite" : "updateWebsite",
-            "deleteWebsite": "deleteWebsite",
+            "createWebsite"   : createWebsite,
+            "findWebsitesByUser" : findWebsitesByUser,
+            "findWebsiteById" : findWebsiteById,
+            "updateWebsite" : updateWebsite,
+            "deleteWebsite": deleteWebsite,
         };
   return api;
 
@@ -27,11 +27,11 @@
    }
 
   function findWebsitesByUser(userId)  {
-      return websites.filter(function(val){return val.developerId === userId})
+      return websites.filter(function(val){return val.developerId === userId;});
   }
 
   function findWebsiteById(websiteId){
-      var result = websites.filter(function(val){return val._id === websiteId})
+      var result = websites.filter(function(val){return val._id === websiteId;});
       if(result.length !== 0){
           return result[0];
       }else{
@@ -41,7 +41,7 @@
 
   function updateWebsite(websiteId, website){
       for(var i = 0; i < websites.length; i++){
-          if(websites[i]._id == websiteId){
+          if(websites[i]._id === websiteId){
               websites[i] = website;
               return;
           }
@@ -50,7 +50,7 @@
 
   function deleteWebsite(websiteId){
       for(var i = 0; i < websites.length; i++){
-          if(websites[i]._id == websiteId){
+          if(websites[i]._id === websiteId){
               websites.splice(i, 1);
               return;
           }

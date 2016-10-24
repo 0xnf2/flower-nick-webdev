@@ -1,7 +1,7 @@
 (function() {
     angular
         .module("WebAppMaker")
-        .controller("EditWebsiteController", EditWebsiteController)
+        .controller("EditWebsiteController", EditWebsiteController);
     function EditWebsiteController($routeProvider, WebsiteService) { 
         var vm = this;
         vm.websiteId = $routeProvider.websiteId;
@@ -16,8 +16,8 @@
             WebsiteService.deleteWebsite(vm.websiteId);
         }
         function init() {
-            vm.website = WebsiteServcie.findWebsiteById(vm.websiteId);
-        };
+            vm.website = WebsiteService.findWebsiteById(vm.websiteId);
+        }
         init();
      }
 })();
