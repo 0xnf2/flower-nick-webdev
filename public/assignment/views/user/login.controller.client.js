@@ -5,8 +5,10 @@
     function LoginController($location, UserService) { 
         var vm = this;
         vm.login = login;
-        function login(user) {
-            user = UserService.findUserByCredentials(user.username, user.password);
+        this.username = "";
+        this.password = "";
+        function login(username, password) {
+            let user = UserService.findUserByCredentials(username, password);
             if(user) {
                 $location.url("/user/" + user._id);
             } else {
