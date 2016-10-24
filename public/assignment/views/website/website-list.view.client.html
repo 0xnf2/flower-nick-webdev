@@ -2,15 +2,15 @@
     <div class="container-fluid">
         <div>
             <p class="navbar-text pull-left">
-                <a href="#/user/{{vm.userId}}" class="navbar-link">
+                <a href="#/user/{{model.userId}}" class="navbar-link">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                 </a>
             </p>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/user/{{model.userId}}/website">
                 Websites
             </a>
             <p class="navbar-text pull-right">
-                <a href="#/user/{{vm.userId}}/website/new" class="navbar-link">
+                <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
                     <span class="glyphicon glyphicon-plus"></span>
                 </a>
             </p>
@@ -21,13 +21,13 @@
 <div class="container-fluid" ng-repeat="website in model.websites">
     <div class="row">
         <div class="col-xs-10 text-primary lead">
-            <a href="#/user/{{vm.userId}}/website/{{website._id}}/page">
+            <a href="#/user/{{model.userId}}/website/{{website._id}}/page">
                 {{website.name}}
             <a/>
         </div>
         <div class="col-xs-2">
             <p>
-                <a href="#/user/{{vm.userId}}/website/{{website._id}}">
+                <a href="#/user/{{model.userId}}/website/{{website._id}}">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
             </p>
@@ -39,7 +39,7 @@
     <div class="container">
         <div class="row navbar-text pull-right">
             <div class="col-xs-3">
-                <a href="#/user/{{vm.userId}}">
+                <a href="#/user/{{model.userId}}">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
