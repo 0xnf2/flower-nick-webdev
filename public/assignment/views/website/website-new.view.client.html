@@ -4,15 +4,15 @@
             <!--Augmented links for larger screens -->
             <div class="col-md-4 col-lg-4 pull-left visible-md-inline-block visible-lg-inline-block">
                 <p class="navbar-text pull-left">
-                    <a href="#/user/:uid" class="navbar-link">
+                    <a href="#/user/{{model.userId}}" class="navbar-link">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </p>
-                <a class="navbar-brand" href="#/user/:uid/website">
+                <a class="navbar-brand" href="#/user/{{model.userId}}/website">
                     Websites
                 </a>
                 <p class="navbar-text pull-right">
-                    <a href="#/user/:uid/website/new" class="navbar-link">
+                    <a href="#/user/{{model.userId}}/website/new" class="navbar-link">
                         <span class="glyphicon glyphicon-plus"></span>
                     </a>
                 </p>
@@ -20,7 +20,7 @@
             <!-- Base Links for small screen -->
             <div class="col-md-8 col-lg-8">
                 <p class="navbar-text pull-left hidden-lg hidden-md">
-                    <a href="#/user/:uid/website" class="navbar-link">
+                    <a href="#/user/{{model.userId}}/website" class="navbar-link">
                         <span class="glyphicon glyphicon-chevron-left"></span>
                     </a>
                 </p>
@@ -28,7 +28,7 @@
                     New Website
                 </a>
                 <p class="navbar-text pull-right">
-                    <a href="#/user/:uid/website" class="navbar-link">
+                    <a href="#/user/{{model.userId}}/website" class="navbar-link">
                         <span class="glyphicon glyphicon-ok"></span>
                     </a>
                 </p>
@@ -43,13 +43,13 @@
         <div id="sidepanel" class="col-md-4 col-lg-4 visible-md-inline visible-lg-inline fill">
             <div class="row">
                 <div class="col-xs-10 text-primary lead">
-                <a href="#/user/:uid/website/:wid/page">
+                <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         Address Book App
                     <a/>
                 </div>
                 <div class="col-xs-2">
                     <p>
-                        <a href="#/user/:uid/website/:wid">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}">
                             <span class="glyphicon glyphicon-cog"></span>
                         </a>
                     </p>
@@ -58,13 +58,13 @@
 
             <div class="row">
                 <div class="col-xs-10 text-primary lead">
-                    <a href="#/user/:uid/website/:wid/page">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         Blogger
                     <a/>
                 </div>
                 <div class="col-xs-2">
                     <p>
-                        <a href="#/user/:uid/website/:wid">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}">
                             <span class="glyphicon glyphicon-cog"></span>
                         </a>
                     </p>
@@ -73,13 +73,13 @@
 
             <div class="row">
                 <div class="col-xs-10 text-primary lead">
-                    <a href="#/user/:uid/website/:wid/page">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         Blogger App
                     <a/>
                 </div>
                 <div class="col-xs-2">
                     <p>
-                        <a href="#/user/:uid/website/:wid">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}">
                             <span class="glyphicon glyphicon-cog"></span>
                         </a>
                     </p>
@@ -88,13 +88,13 @@
 
             <div class="row">
                 <div class="col-xs-10 text-primary lead">
-                    <a href="#/user/:uid/website/:wid/page">
+                    <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                         Script Testing App
                     <a/>
                 </div>
                 <div class="col-xs-2">
                     <p>
-                        <a href="#/user/:uid/website/:wid/page">
+                        <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
                             <span class="glyphicon glyphicon-cog"></span>
                         </a>
                     </p>
@@ -121,7 +121,7 @@
     <div class="container">
         <div class="row navbar-text pull-right">
             <div class="col-xs-3">
-                <a href="#/user/:uid">
+                <a href="#/user/{{model.userId}}">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
