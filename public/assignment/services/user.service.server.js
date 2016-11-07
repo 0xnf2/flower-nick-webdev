@@ -67,7 +67,7 @@ module.exports = function(app) {
       for(var i = 0; i < users.length; i++){
           if(users[i]._id === userId){
               users[i] = user;
-              return;
+              break;
           }
         }
         res.send(200);
@@ -79,7 +79,7 @@ module.exports = function(app) {
       for(var i = 0; i < users.length; i++){
           if(users[i]._id === userId){
               users.splice(i, 1);
-              return;
+              break;
           }
         }
     }

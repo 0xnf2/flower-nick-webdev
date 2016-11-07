@@ -49,7 +49,8 @@ module.exports = function(app) {
       var website = res.body;
       for(var i = 0; i < websites.length; i++){
           if(websites[i]._id === websiteId){
-              websites[i] = website;              
+              websites[i] = website;       
+              break;       
           }
         }
         res.send(200);
@@ -61,6 +62,7 @@ module.exports = function(app) {
       for(var i = 0; i < websites.length; i++){
           if(websites[i]._id === websiteId){
               websites.splice(i, 1);
+              break;
           }
         }
         res.send(200);
