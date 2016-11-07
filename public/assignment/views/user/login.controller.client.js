@@ -8,12 +8,14 @@
         this.username = "";
         this.password = "";
         function login(username, password) {
-            let user = UserService.findUserByCredentials(username, password);
-            if(user) {
-                $location.url("/user/" + user._id);
-            } else {
-                vm.alert = "Unable to login";
-            }
+            let promise = UserService.findUserByCredentials(username, password);
+            promise
+                .success(function(user){
+                    $location.url("/user/" + user._id);
+            })
+            .error(function(err){
+                     vm.alert = "Unable to login: " + err;
+            });
         }
     }
 })();
