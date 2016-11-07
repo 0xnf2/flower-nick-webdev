@@ -6,7 +6,14 @@
         var vm = this;
         vm.userId = $routeParams.uid;
         function init() {
-            vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
+            let promise = WebsiteService.findWebsitesByUser(vm.userId);
+            promise
+                .success(function(websites){
+                    vm.websites = websites;
+            })
+            .error(function(err){
+                     console.log("error: " + err);
+            });
         }
         init();
     }
