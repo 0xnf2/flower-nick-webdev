@@ -6,7 +6,14 @@
         var vm = this;
         vm.pageId = $routeParams.pageId;
         function init() {
-            vm.page = PageService.findPageById(vm.pageId);
+            let promise = PageService.findPageById(vm.pageId);
+            promise
+                .success(function(page){
+                    vm.page = page;
+            })
+            .error(function(err){
+                     console.log("error: " + err);
+            });
         }
         init();
      }
