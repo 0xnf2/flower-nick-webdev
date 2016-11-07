@@ -6,7 +6,14 @@
         var vm = this;
         vm.widgetId = $routeParams.widgetId;
         function init() {
-            vm.widget = WidgetService.findWidgetById(vm.widgetId);
+            let promise = WidgetService.findWidgetById(vm.widgetId);
+            promise
+                .success(function(widget){
+                    vm.widget = widget;
+            })
+            .error(function(err){
+                     console.log("error: " + err);
+            });
         }
         init();
      }
