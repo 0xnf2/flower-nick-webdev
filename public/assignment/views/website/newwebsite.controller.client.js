@@ -11,7 +11,7 @@
             let promise = WebsiteService.createWebsite(vm.userId, {"name":name, "description":description, "developerId": vm.userId});
             promise
                 .success(function(website){
-                    console.log("success");
+                    console.log("success: " + website);
             })
             .error(function(err){
                      console.log("error: " + err);

@@ -11,14 +11,35 @@
         vm.deleteWebsite = deleteWebsite;
 
         function updateWebsite(website) {
-            WebsiteService.updateWebsite(vm.websiteId, website);
+            let promise = WebsiteService.updateWebsite(vm.websiteId, website);
+            promise
+                .success(function(success){
+                    console.log("success: " + success);
+            })
+            .error(function(err){
+                     console.log("error: " + err);
+            });
         }
 
         function deleteWebsite() {
-            WebsiteService.deleteWebsite(vm.websiteId);
+            let promise = WebsiteService.deleteWebsite(vm.websiteId);
+            promise
+                .success(function(success){
+                    console.log("success: " + success);
+            })
+            .error(function(err){
+                     console.log("error: " + err);
+            });
         }
         function init() {
-            vm.website = WebsiteService.findWebsiteById(vm.websiteId);
+            let promise = WebsiteService.findWebsiteById(vm.websiteId);
+            promise
+                .success(function(website){
+                    vm.website = website;
+            })
+            .error(function(err){
+                     console.log("error: " + err);
+            });
         }
         init();
      }
