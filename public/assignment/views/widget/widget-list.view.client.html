@@ -18,7 +18,7 @@
     </div>
 </nav>
 
-<div class="container-fluid" ng-repeat="widget in model.widgets">
+<div jga-sortable class="container-fluid" ng-repeat="widget in model.widgets">
 
     <div ng-switch-when="HEADING">
         <ng-include src="'widget-heading.view.client.html'">
