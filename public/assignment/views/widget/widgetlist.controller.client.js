@@ -8,7 +8,14 @@
         vm.websiteId = $routeParams.websiteId;
         vm.pageId = $routeParams.pageId;
         function init() {
-            vm.widgets = WidgetService.findWidgetsByPageId(vm.pageId);
+            let promise = WidgetService.findWidgetsByPageId(vm.pageId);
+            promise
+                .success(function(widgets){
+                    vm.widgets = widgets;
+            })
+            .error(function(err){
+                     console.log("error: " + err);
+            });
         }
         init();
      }
